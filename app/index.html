@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedExames - Portal de Exames e Agendamentos</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="/cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="exames.html">Meus Exames</a></li>
+                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="orcamento.html">Orçamentos</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <span class="user-name">Olá, Seu Nome</span>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHYxZm0wOWduanNmd2NocjEwb2w2ZmppMXJqODFxc2l6YmZkYnR0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" alt="Foto do perfil" class="user-pic">
+                <div class="dropdown">
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <h2>Dashboard</h2>
+            
+            <div class="dashboard-grid">
+                <!-- Próximos Agendamentos -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Próximos Agendamentos</h3>
+                        <a href="agendamentos.html" class="view-all">Ver todos</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="appointment">
+                            <div class="date">
+                                <span class="day">15</span>
+                                <span class="month">Abr</span>
+                            </div>
+                            <div class="details">
+                                <h4>Ressonância Magnética</h4>
+                                <p>Dr. Carlos Silva • 14:30</p>
+                                <p>Unidade Centro</p>
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-outline">Remarcar</button>
+                                <button class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                        <div class="appointment">
+                            <div class="date">
+                                <span class="day">22</span>
+                                <span class="month">Abr</span>
+                            </div>
+                            <div class="details">
+                                <h4>Exames de Sangue</h4>
+                                <p>Laboratório Central • 08:00</p>
+                                <p>Unidade Norte</p>
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-outline">Remarcar</button>
+                                <button class="btn btn-danger">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultados Recentes -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Resultados Recentes</h3>
+                        <a href="exames.html" class="view-all">Ver todos</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="exam-result">
+                            <div class="icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <div class="details">
+                                <h4>Hemograma Completo</h4>
+                                <p>Disponível desde: 10/04/2025</p>
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-primary">Visualizar</button>
+                                <button class="btn btn-outline">Download</button>
+                            </div>
+                        </div>
+                        <div class="exam-result">
+                            <div class="icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <div class="details">
+                                <h4>Raio-X Tórax</h4>
+                                <p>Disponível desde: 05/04/2025</p>
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-primary">Visualizar</button>
+                                <button class="btn btn-outline">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orçamentos Pendentes -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Orçamentos Pendentes</h3>
+                        <a href="orcamentos.html" class="view-all">Ver todos</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="budget">
+                            <div class="icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <div class="details">
+                                <h4>Pacote de Exames Cardiológicos</h4>
+                                <p>Valor: R$ 850,00</p>
+                                <p>Validade: 20/04/2025</p>
+                            </div>
+                            <div class="actions">
+                                <button class="btn btn-success">Aprovar</button>
+                                <button class="btn btn-outline">Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ações Rápidas -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Ações Rápidas</h3>
+                    </div>
+                    <div class="card-content quick-actions">
+                        <a href="agendamentos.html" class="quick-action">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Novo Agendamento</span>
+                        </a>
+                        <a href="upload.html" class="quick-action">
+                            <i class="fas fa-upload"></i>
+                            <span>Enviar Pedido</span>
+                        </a>
+                        <a href="contato.html" class="quick-action">
+                            <i class="fas fa-headset"></i>
+                            <span>Suporte</span>
+                        </a>
+                        <a href="unidades.html" class="quick-action">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Nossas Unidades</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+      
+        
+    </div>
+
+    <script src="/app/main.js"></script>
+    <script src="/app/router.js" type="module"></script>
+</body>
+</html>

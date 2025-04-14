@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamentos - MedExames</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="/app/orcamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="/cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="exames.html">Meus Exames</a></li>
+                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="orcamentos.html" class="active">Orçamentos</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <span class="user-name">Olá, Seu Nome</span>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHYxZm0wOWduanNmd2NocjEwb2w2ZmppMXJqODFxc2l6YmZkYnR0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" alt="Foto do perfil" class="user-pic">
+                <div class="dropdown">
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="page-header">
+                <h2>Orçamentos</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" id="newBudgetBtn">
+                        <i class="fas fa-plus"></i> Novo Orçamento
+                    </button>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="pending">Pendentes</button>
+                    <button class="tab-btn" data-tab="approved">Aprovados</button>
+                    <button class="tab-btn" data-tab="rejected">Rejeitados</button>
+                    <button class="tab-btn" data-tab="all">Todos</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Tab Pendentes -->
+                    <div class="tab-pane active" id="pending">
+                        <div class="budget-card">
+                            <div class="budget-header">
+                                <span class="budget-id">#ORC-2025-0015</span>
+                                <span class="budget-status pending">Pendente</span>
+                            </div>
+                            <div class="budget-body">
+                                <h3>Check-up Anual</h3>
+                                <div class="budget-details">
+                                    <p><strong>Data:</strong> 10/04/2025</p>
+                                    <p><strong>Valor:</strong> R$ 420,00</p>
+                                    <p><strong>Exames:</strong> Hemograma, Glicemia, Colesterol, TSH</p>
+                                </div>
+                            </div>
+                            <div class="budget-footer">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-eye"></i> Detalhes
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-check"></i> Aprovar
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-times"></i> Rejeitar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="budget-card">
+                            <div class="budget-header">
+                                <span class="budget-id">#ORC-2025-0016</span>
+                                <span class="budget-status pending">Pendente</span>
+                            </div>
+                            <div class="budget-body">
+                                <h3>Exames Cardiológicos</h3>
+                                <div class="budget-details">
+                                    <p><strong>Data:</strong> 12/04/2025</p>
+                                    <p><strong>Valor:</strong> R$ 780,00</p>
+                                    <p><strong>Exames:</strong> Eletrocardiograma, Ecocardiograma, Teste Ergométrico</p>
+                                </div>
+                            </div>
+                            <div class="budget-footer">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-eye"></i> Detalhes
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-check"></i> Aprovar
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-times"></i> Rejeitar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Aprovados -->
+                    <div class="tab-pane" id="approved">
+                        <div class="budget-card">
+                            <div class="budget-header">
+                                <span class="budget-id">#ORC-2025-0012</span>
+                                <span class="budget-status approved">Aprovado</span>
+                            </div>
+                            <div class="budget-body">
+                                <h3>Ultrassonografia Abdominal</h3>
+                                <div class="budget-details">
+                                    <p><strong>Data:</strong> 05/04/2025</p>
+                                    <p><strong>Valor:</strong> R$ 320,00</p>
+                                    <p><strong>Exames:</strong> USG Abdômen Total</p>
+                                </div>
+                            </div>
+                            <div class="budget-footer">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-eye"></i> Detalhes
+                                </button>
+                                <button class="btn btn-success btn-sm">
+                                    <i class="fas fa-calendar-check"></i> Agendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Rejeitados -->
+                    <div class="tab-pane" id="rejected">
+                        <div class="budget-card">
+                            <div class="budget-header">
+                                <span class="budget-id">#ORC-2025-0008</span>
+                                <span class="budget-status rejected">Rejeitado</span>
+                            </div>
+                            <div class="budget-body">
+                                <h3>Ressonância Magnética</h3>
+                                <div class="budget-details">
+                                    <p><strong>Data:</strong> 28/03/2025</p>
+                                    <p><strong>Valor:</strong> R$ 1.250,00</p>
+                                    <p><strong>Motivo:</strong> Não coberto pelo plano</p>
+                                </div>
+                            </div>
+                            <div class="budget-footer">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="fas fa-eye"></i> Detalhes
+                                </button>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-redo"></i> Reenviar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Todos -->
+                    <div class="tab-pane" id="all">
+                        <!-- Os orçamentos das outras abas apareceriam aqui também -->
+                        <p class="empty-message">Nenhum orçamento encontrado.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Novo Orçamento -->
+            <div class="modal" id="newBudgetModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Novo Orçamento</h3>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="newBudgetForm">
+                            <div class="form-group">
+                                <label for="examType">Tipo de Exame</label>
+                                <select id="examType" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="laboratorial">Laboratorial</option>
+                                    <option value="imagem">Imagem</option>
+                                    <option value="cardiologico">Cardiológico</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="examName">Exame(s) Desejado(s)</label>
+                                <textarea id="examName" rows="3" placeholder="Descreva os exames que deseja orçar" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="healthInsurance">Plano de Saúde</label>
+                                <select id="healthInsurance">
+                                    <option value="">Particular</option>
+                                    <option value="unimed">Unimed</option>
+                                    <option value="amil">Amil</option>
+                                    <option value="sulamerica">SulAmérica</option>
+                                    <option value="bradesco">Bradesco Saúde</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="doctorRequest">Possui requisição médica?</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="doctorRequest" value="sim" checked> Sim
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="doctorRequest" value="nao"> Não
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="requestFileGroup">
+                                <label for="requestFile">Anexar Requisição</label>
+                                <input type="file" id="requestFile" accept=".pdf,.jpg,.png">
+                                <small>Formatos aceitos: PDF, JPG, PNG (até 5MB)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="additionalInfo">Informações Adicionais</label>
+                                <textarea id="additionalInfo" rows="2" placeholder="Alguma informação relevante que devemos considerar"></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" id="cancelBudgetBtn">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Solicitar Orçamento</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Detalhes do Orçamento -->
+            <div class="modal" id="budgetDetailModal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Detalhes do Orçamento</h3>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="budget-detail">
+                            <div class="detail-row">
+                                <span class="detail-label">Número:</span>
+                                <span class="detail-value">#ORC-2025-0015</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Status:</span>
+                                <span class="detail-value status pending">Pendente</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Data:</span>
+                                <span class="detail-value">10/04/2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Tipo:</span>
+                                <span class="detail-value">Check-up Anual</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Valor:</span>
+                                <span class="detail-value">R$ 420,00</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Exames:</span>
+                                <ul class="exam-list">
+                                    <li>Hemograma Completo</li>
+                                    <li>Glicemia em Jejum</li>
+                                    <li>Colesterol Total e Frações</li>
+                                    <li>TSH e T4 Livre</li>
+                                </ul>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Plano de Saúde:</span>
+                                <span class="detail-value">Unimed</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Requisição Médica:</span>
+                                <span class="detail-value">Sim <a href="#" class="download-link">(Baixar)</a></span>
+                            </div>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button class="btn btn-outline" id="closeDetailBtn">Fechar</button>
+                            <button class="btn btn-primary">Imprimir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+    </div>
+
+    <script src="/app/orcamento.js"></script>
+</body>
+</html>

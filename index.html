@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MedExames</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Demo Credentials Box -->
+        <div class="demo-credentials">
+            <h4>Dados para Demonstração:</h4>
+            <p><strong>Email:</strong> demo@medexames.com</p>
+            <p><strong>Senha:</strong> demo123</p>
+            <button id="copyCredentials" class="btn-copy">
+                <i class="fas fa-copy"></i> Copiar
+            </button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-box">
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Digite seu email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                        <button type="button" id="togglePassword" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember"> Lembrar de mim
+                    </label>
+                    <a href="#" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </button>
+                
+                <div class="divider">
+                    <span>ou</span>
+                </div>
+                
+                <button type="button" class="btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
+                    Continuar com Google
+                </button>
+                
+                <p class="register-link">
+                    Não tem uma conta? <a href="#">Cadastre-se</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

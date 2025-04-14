@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Exames - MedExames</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="/app/exames.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="/cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header (mesmo do index.html) -->
+        <header>
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="exames.html" class="active">Meus Exames</a></li>
+                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="orcamento.html">Orçamentos</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <span class="user-name">Olá, Seu Nome</span>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHYxZm0wOWduanNmd2NocjEwb2w2ZmppMXJqODFxc2l6YmZkYnR0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" alt="Foto do perfil" class="user-pic">
+                <div class="dropdown">
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="page-header">
+                <h2>Meus Exames</h2>
+                <div class="filters">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar exames...">
+                    </div>
+                    <div class="filter-dropdown">
+                        <button class="btn btn-outline filter-btn">
+                            <i class="fas fa-filter"></i> Filtrar
+                        </button>
+                        <div class="filter-menu">
+                            <div class="filter-group">
+                                <label>Período:</label>
+                                <select>
+                                    <option>Todos</option>
+                                    <option>Último mês</option>
+                                    <option>Últimos 3 meses</option>
+                                    <option>Último ano</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Status:</label>
+                                <select>
+                                    <option>Todos</option>
+                                    <option>Disponíveis</option>
+                                    <option>Em análise</option>
+                                    <option>Pendentes</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Tipo de exame:</label>
+                                <select>
+                                    <option>Todos</option>
+                                    <option>Laboratorial</option>
+                                    <option>Imagem</option>
+                                    <option>Cardiológico</option>
+                                </select>
+                            </div>
+                            <div class="filter-actions">
+                                <button class="btn btn-outline">Limpar</button>
+                                <button class="btn btn-primary">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exams-tabs">
+                <button class="tab-btn active" data-tab="disponivel">Disponíveis</button>
+                <button class="tab-btn" data-tab="analise">Em Análise</button>
+                <button class="tab-btn" data-tab="pendente">Aguardando Coleta</button>
+                <button class="tab-btn" data-tab="todos">Todos</button>
+            </div>
+
+            <!-- Tab content -->
+            <div class="tab-content active" id="disponivel">
+                <div class="exams-list">
+                    <div class="exam-card">
+                        <div class="exam-card-header">
+                            <div class="exam-info">
+                                <h3>Hemograma Completo</h3>
+                                <span class="badge badge-success">Disponível</span>
+                            </div>
+                            <div class="exam-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>10/04/2025</span>
+                            </div>
+                        </div>
+                        <div class="exam-card-body">
+                            <div class="exam-details">
+                                <p><strong>Médico:</strong> Dra. Ana Soares</p>
+                                <p><strong>Laboratório:</strong> Central Labs</p>
+                                <p><strong>Código:</strong> LAB12345</p>
+                            </div>
+                        </div>
+                        <div class="exam-card-footer">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-share-alt"></i> Compartilhar
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="exam-card">
+                        <div class="exam-card-header">
+                            <div class="exam-info">
+                                <h3>Raio-X Tórax</h3>
+                                <span class="badge badge-success">Disponível</span>
+                            </div>
+                            <div class="exam-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>05/04/2025</span>
+                            </div>
+                        </div>
+                        <div class="exam-card-body">
+                            <div class="exam-details">
+                                <p><strong>Médico:</strong> Dr. Roberto Silva</p>
+                                <p><strong>Clínica:</strong> Imagem Central</p>
+                                <p><strong>Código:</strong> IMG78901</p>
+                            </div>
+                        </div>
+                        <div class="exam-card-footer">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-share-alt"></i> Compartilhar
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="exam-card">
+                        <div class="exam-card-header">
+                            <div class="exam-info">
+                                <h3>Eletrocardiograma</h3>
+                                <span class="badge badge-success">Disponível</span>
+                            </div>
+                            <div class="exam-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>01/04/2025</span>
+                            </div>
+                        </div>
+                        <div class="exam-card-body">
+                            <div class="exam-details">
+                                <p><strong>Médico:</strong> Dr. Carlos Mendes</p>
+                                <p><strong>Clínica:</strong> CardioSaúde</p>
+                                <p><strong>Código:</strong> CRD45632</p>
+                            </div>
+                        </div>
+                        <div class="exam-card-footer">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-share-alt"></i> Compartilhar
+                            </button>
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-eye"></i> Visualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab content for "Em Análise" -->
+            <div class="tab-content" id="analise">
+                <div class="exams-list">
+                    <div class="exam-card">
+                        <div class="exam-card-header">
+                            <div class="exam-info">
+                                <h3>Ressonância Magnética - Joelho</h3>
+                                <span class="badge badge-warning">Em Análise</span>
+                            </div>
+                            <div class="exam-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>11/04/2025</span>
+                            </div>
+                        </div>
+                        <div class="exam-card-body">
+                            <div class="exam-details">
+                                <p><strong>Médico:</strong> Dr. Marcos Oliveira</p>
+                                <p><strong>Clínica:</strong> Centro de Diagnóstico</p>
+                                <p><strong>Código:</strong> RES98765</p>
+                                <p><strong>Previsão:</strong> 15/04/2025</p>
+                            </div>
+                        </div>
+                        <div class="exam-card-footer">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-text">Análise em andamento (70%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for other tabs -->
+            <div class="tab-content" id="pendente">
+                <div class="exams-list">
+                    <div class="exam-card">
+                        <div class="exam-card-header">
+                            <div class="exam-info">
+                                <h3>Exame de Sangue - Check-up Completo</h3>
+                                <span class="badge badge-info">Aguardando Coleta</span>
+                            </div>
+                            <div class="exam-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>22/04/2025</span>
+                            </div>
+                        </div>
+                        <div class="exam-card-body">
+                            <div class="exam-details">
+                                <p><strong>Médico:</strong> Dra. Patrícia Santos</p>
+                                <p><strong>Laboratório:</strong> Central Labs</p>
+                                <p><strong>Código:</strong> LAB45678</p>
+                                <p><strong>Instruções:</strong> Jejum de 12 horas</p>
+                            </div>
+                        </div>
+                        <div class="exam-card-footer">
+                            <button class="btn btn-outline btn-sm">
+                                <i class="fas fa-print"></i> Imprimir Pedido
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                <i class="fas fa-calendar-check"></i> Agendar Coleta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="todos">
+                <!-- Conteúdo combinado de todas as abas -->
+                <p class="placeholder-text">Todos os exames serão listados aqui</p>
+            </div>
+        </main>
+
+        
+        
+    </div>
+
+    <script src="/app/exames.js"></script>
+</body>
+</html>

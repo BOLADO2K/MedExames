@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico - MedExames</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="/app/historico.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="/cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header (mesmo do index.html) -->
+        <header>
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="exames.html">Meus Exames</a></li>
+                    <li><a href="agendamentos.html">Agendamentos</a></li>
+                    <li><a href="orcamento.html">Orçamentos</a></li>
+                    <li><a href="historico.html" class="active">Histórico</a></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <span class="user-name">Olá, Seu Nome</span>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHYxZm0wOWduanNmd2NocjEwb2w2ZmppMXJqODFxc2l6YmZkYnR0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" alt="Foto do perfil" class="user-pic">
+                <div class="dropdown">
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="page-header">
+                <h2>Histórico</h2>
+                <div class="search-filter">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar exame..." id="searchInput">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="filter-group">
+                        <select id="yearFilter">
+                            <option value="">Todos os anos</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <select id="examTypeFilter">
+                            <option value="">Todos os tipos</option>
+                            <option value="laboratorial">Laboratoriais</option>
+                            <option value="imagem">Imagem</option>
+                            <option value="cardiologico">Cardiológicos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-view">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="month-badge">Abril 2025</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="history-card">
+                                <div class="history-header">
+                                    <span class="exam-date">10 Abr 2025</span>
+                                    <span class="exam-type laboratorial">Exame Laboratorial</span>
+                                </div>
+                                <div class="history-body">
+                                    <h3>Hemograma Completo</h3>
+                                    <div class="history-details">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Centro</p>
+                                        <p><i class="fas fa-user-md"></i> Dr. Carlos Eduardo</p>
+                                    </div>
+                                    <div class="history-badges">
+                                        <span class="badge badge-success">Realizado</span>
+                                        <span class="badge badge-primary">Resultado Disponível</span>
+                                    </div>
+                                </div>
+                                <div class="history-footer">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-file-pdf"></i> Ver resultados
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus"></i> Agendar novo exame
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="month-badge">Março 2025</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="history-card">
+                                <div class="history-header">
+                                    <span class="exam-date">18 Mar 2025</span>
+                                    <span class="exam-type imagem">Exame de Imagem</span>
+                                </div>
+                                <div class="history-body">
+                                    <h3>Tomografia Computadorizada do Crânio</h3>
+                                    <div class="history-details">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Sul</p>
+                                        <p><i class="fas fa-user-md"></i> Dra. Mariana Silva</p>
+                                    </div>
+                                    <div class="history-badges">
+                                        <span class="badge badge-success">Realizado</span>
+                                        <span class="badge badge-primary">Resultado Disponível</span>
+                                    </div>
+                                </div>
+                                <div class="history-footer">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-file-pdf"></i> Ver resultados
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus"></i> Agendar novo exame
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="history-card">
+                                <div class="history-header">
+                                    <span class="exam-date">05 Mar 2025</span>
+                                    <span class="exam-type cardiologico">Exame Cardiológico</span>
+                                </div>
+                                <div class="history-body">
+                                    <h3>Eletrocardiograma</h3>
+                                    <div class="history-details">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Norte</p>
+                                        <p><i class="fas fa-user-md"></i> Dr. Roberto Almeida</p>
+                                    </div>
+                                    <div class="history-badges">
+                                        <span class="badge badge-success">Realizado</span>
+                                        <span class="badge badge-primary">Resultado Disponível</span>
+                                    </div>
+                                </div>
+                                <div class="history-footer">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-file-pdf"></i> Ver resultados
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus"></i> Agendar novo exame
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="month-badge">Janeiro 2025</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="history-card">
+                                <div class="history-header">
+                                    <span class="exam-date">15 Jan 2025</span>
+                                    <span class="exam-type laboratorial">Exame Laboratorial</span>
+                                </div>
+                                <div class="history-body">
+                                    <h3>Glicemia em Jejum</h3>
+                                    <div class="history-details">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Centro</p>
+                                        <p><i class="fas fa-user-md"></i> Dra. Ana Paula Santos</p>
+                                    </div>
+                                    <div class="history-badges">
+                                        <span class="badge badge-success">Realizado</span>
+                                        <span class="badge badge-primary">Resultado Disponível</span>
+                                    </div>
+                                </div>
+                                <div class="history-footer">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-file-pdf"></i> Ver resultados
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus"></i> Agendar novo exame
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <div class="month-badge">Novembro 2024</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="history-card">
+                                <div class="history-header">
+                                    <span class="exam-date">22 Nov 2024</span>
+                                    <span class="exam-type imagem">Exame de Imagem</span>
+                                </div>
+                                <div class="history-body">
+                                    <h3>Ultrassonografia de Abdômen Total</h3>
+                                    <div class="history-details">
+                                        <p><i class="fas fa-map-marker-alt"></i> Unidade Norte</p>
+                                        <p><i class="fas fa-user-md"></i> Dr. Henrique Costa</p>
+                                    </div>
+                                    <div class="history-badges">
+                                        <span class="badge badge-success">Realizado</span>
+                                        <span class="badge badge-primary">Resultado Disponível</span>
+                                    </div>
+                                </div>
+                                <div class="history-footer">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-file-pdf"></i> Ver resultados
+                                    </button>
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-share-alt"></i> Compartilhar
+                                    </button>
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="fas fa-plus"></i> Agendar novo exame
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-end">
+                    <button class="btn btn-outline load-more-btn">
+                        <i class="fas fa-history"></i> Carregar histórico anterior
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modal de Compartilhamento -->
+        <div class="modal" id="shareModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Compartilhar Exame</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="shareForm">
+                        <div class="form-group">
+                            <label for="shareMethod">Método de compartilhamento</label>
+                            <select id="shareMethod">
+                                <option value="email">Email</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="link">Link direto</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="emailGroup">
+                            <label for="recipientEmail">Email do destinatário</label>
+                            <input type="email" id="recipientEmail" placeholder="email@exemplo.com">
+                        </div>
+                        
+                        <div class="form-group" id="whatsappGroup" style="display: none;">
+                            <label for="recipientPhone">Número de telefone</label>
+                            <input type="tel" id="recipientPhone" placeholder="(00) 00000-0000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shareMessage">Mensagem (opcional)</label>
+                            <textarea id="shareMessage" rows="3" placeholder="Adicione uma mensagem personalizada..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expirationDate">Validade do compartilhamento</label>
+                            <select id="expirationDate">
+                                <option value="1">1 dia</option>
+                                <option value="7" selected>7 dias</option>
+                                <option value="30">30 dias</option>
+                                <option value="0">Sem validade</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="cancelShareButton">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Compartilhar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+        
+            
+    </div>
+
+    <script src="/app/historico.js"></script>
+</body>
+</html>

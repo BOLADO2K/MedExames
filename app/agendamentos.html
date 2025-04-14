@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos - MedExames</title>
+    <link rel="stylesheet" href="/app/style.css">
+    <link rel="stylesheet" href="/app/agendamentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="/cruz-vermelha.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Header (mesmo do index.html) -->
+        <header>
+            <div class="logo">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWs4bzRjczFzbmJ1dmFxejVoMGpha214eWFmZWdmcWxoenB1ZThhaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/f7YCJwa0XZbLvW3gav/giphy.gif" alt="MedExames Logo">
+                <h1>MedExames</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="exames.html">Meus Exames</a></li>
+                    <li><a href="agendamentos.html" class="active">Agendamentos</a></li>
+                    <li><a href="orcamento.html">Orçamentos</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                </ul>
+            </nav>
+            <div class="user-area">
+                <span class="user-name">Olá, Seu Nome</span>
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHYxZm0wOWduanNmd2NocjEwb2w2ZmppMXJqODFxc2l6YmZkYnR0cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZXkraFrlIW1D25M6ZJ/giphy.gif" alt="Foto do perfil" class="user-pic">
+                <div class="dropdown">
+                    <a href="perfil.html">Meu Perfil</a>
+                    <a href="#" id="logout">Sair</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="page-header">
+                <h2>Agendamentos</h2>
+                <button class="btn btn-primary new-appointment-btn">
+                    <i class="fas fa-plus"></i> Novo Agendamento
+                </button>
+            </div>
+
+            <div class="calendar-view">
+                <div class="calendar-header">
+                    <button class="btn btn-icon" id="prevMonth">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h3 id="currentMonth">Abril 2025</h3>
+                    <button class="btn btn-icon" id="nextMonth">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day-header">Dom</div>
+                    <div class="calendar-day-header">Seg</div>
+                    <div class="calendar-day-header">Ter</div>
+                    <div class="calendar-day-header">Qua</div>
+                    <div class="calendar-day-header">Qui</div>
+                    <div class="calendar-day-header">Sex</div>
+                    <div class="calendar-day-header">Sáb</div>
+                    
+                    <!-- Dias do calendário (serão preenchidos via JavaScript) -->
+                    <div class="calendar-day prev-month">30</div>
+                    <div class="calendar-day prev-month">31</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day">9</div>
+                    <div class="calendar-day">10</div>
+                    <div class="calendar-day">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day today">14</div>
+                    <div class="calendar-day has-appointment">15
+                        <span class="appointment-indicator"></span>
+                    </div>
+                    <div class="calendar-day">16</div>
+                    <div class="calendar-day">17</div>
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day has-appointment">22
+                        <span class="appointment-indicator"></span>
+                    </div>
+                    <div class="calendar-day">23</div>
+                    <div class="calendar-day">24</div>
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day">30</div>
+                    <div class="calendar-day next-month">1</div>
+                    <div class="calendar-day next-month">2</div>
+                    <div class="calendar-day next-month">3</div>
+                </div>
+            </div>
+
+            <div class="appointments-list">
+                <h3>Próximos Agendamentos</h3>
+                
+                <div class="appointment-card">
+                    <div class="appointment-date">
+                        <div class="date-box">
+                            <span class="day">15</span>
+                            <span class="month">Abr</span>
+                        </div>
+                        <div class="time">14:30</div>
+                    </div>
+                    <div class="appointment-details">
+                        <h4>Ressonância Magnética</h4>
+                        <p><i class="fas fa-user-md"></i> Dr. Carlos Silva</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Unidade Centro - Sala 302</p>
+                        <p><i class="fas fa-info-circle"></i> Trazer pedido médico e documento de identidade</p>
+                    </div>
+                    <div class="appointment-actions">
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-sync-alt"></i> Remarcar
+                        </button>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-map"></i> Ver localização
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="appointment-card">
+                    <div class="appointment-date">
+                        <div class="date-box">
+                            <span class="day">22</span>
+                            <span class="month">Abr</span>
+                        </div>
+                        <div class="time">08:00</div>
+                    </div>
+                    <div class="appointment-details">
+                        <h4>Exames de Sangue</h4>
+                        <p><i class="fas fa-flask"></i> Laboratório Central</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Unidade Norte - 1º andar</p>
+                        <p><i class="fas fa-info-circle"></i> Jejum de 12 horas necessário</p>
+                    </div>
+                    <div class="appointment-actions">
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-sync-alt"></i> Remarcar
+                        </button>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-map"></i> Ver localização
+                        </button>
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        
+
+        <!-- Modal de Novo Agendamento -->
+        <div class="modal" id="appointmentModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Novo Agendamento</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="examType">Tipo de Exame</label>
+                            <select id="examType" required>
+                                <option value="">Selecione o tipo de exame</option>
+                                <option value="laboratorial">Exames Laboratoriais</option>
+                                <option value="imagem">Exames de Imagem</option>
+                                <option value="cardiologico">Exames Cardiológicos</option>
+                                <option value="outro">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="specificExam">Exame Específico</label>
+                            <select id="specificExam" required disabled>
+                                <option value="">Selecione primeiro o tipo de exame</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Unidade</label>
+                            <select id="location" required>
+                                <option value="">Selecione a unidade</option>
+                                <option value="centro">Unidade Centro</option>
+                                <option value="norte">Unidade Norte</option>
+                                <option value="sul">Unidade Sul</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointmentDate">Data</label>
+                            <input type="date" id="appointmentDate" required min="2025-04-14">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="appointmentTime">Horário</label>
+                            <select id="appointmentTime" required disabled>
+                                <option value="">Selecione primeiro a data</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medicalOrder">Pedido Médico</label>
+                            <div class="file-upload">
+                                <input type="file" id="medicalOrder">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-upload"></i>
+                                    <span>Anexar pedido médico (opcional)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Observações</label>
+                            <textarea id="notes" rows="3" placeholder="Alguma informação adicional importante..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline" id="cancelButton">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Agendar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/app/agendamentos.js"></script>
+</body>
+</html>
