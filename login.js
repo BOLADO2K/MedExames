@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Simular tempo de login
             setTimeout(() => {
                 // Redirecionar para a página principal
-                window.location.href = '/app/index.html';
+                window.location.href = 'app/index.html';
             }, 1500);
         } else {
             alert('Credenciais inválidas. Use os dados de demonstração fornecidos.');
